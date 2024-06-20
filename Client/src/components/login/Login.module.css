@@ -1,0 +1,53 @@
+.login{
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.leftSection{
+  height: 100vh;
+  width: 55vw;
+}
+
+.leftSection h1{
+  font-weight: 700;
+  margin-top: 8vh;
+  margin-left: 12vw;
+}
+.leftSection h5{
+  font-size: 1.2vw;
+  margin-top: 5vh;
+  margin-left: 15vw;
+}
+.loginForm{
+margin-left: 15vw;
+margin-top: 15vh;
+margin-bottom: 5vh;
+}
+input{
+  height: 3vh;
+  padding: 1%;
+  width: 20vw;
+  margin-bottom: 3vh;
+  font-size: 1vw;
+}
+.leftSection span{
+  font-size: .8vw;
+  margin-left: 18vw;
+}
+.leftSection button{
+  background-color: rgb(167, 81, 81);
+  height: 5vh;
+  width: 10vw;
+  border: none;
+  border-radius: .1rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+}
+.rightSection{
+  height: 100vh;
+  width: 45vw;
+}
+.rightSection img{
+  height: 100vh;
+  width: 45vw;
+}

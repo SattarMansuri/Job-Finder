@@ -1,0 +1,77 @@
+
+.Jobdetails{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFEEEE;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-weight: 500;
+}
+.navBar{
+  position: fixed;
+  top: 0;
+}
+.info{
+  box-shadow: 0px 4px 23px 2px #0000001A;
+  width: 64vw;
+  height: 11vh;
+  margin-top: 15vh;
+  margin-left: 15vw;
+  margin-bottom: 3vh;
+  font-size: 2vw;
+  padding: 2vh 3vw;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  background-color: white;
+}
+.jd{
+  box-shadow: 0px 4px 23px 2px #0000001A;
+  width: 66vw;
+  min-height: 80vh;
+  margin-left: 15vw;
+  margin-bottom: 10vh;
+  padding: 2vh 2vw;
+  position: relative;
+  background-color: white;
+}
+.duration{
+  position: relative;
+  left: 5vw;
+  bottom: 4vh;
+  color: #999999;
+}
+.months{
+  position: relative;
+  bottom: -1.5vh;
+  left: 8vw;
+  color: #595959;
+}
+.edit{
+  height: 4vh;
+  width: 8vw;
+  border: none;
+  border-radius: .3rem;
+background: #ED5353;
+ color: white;
+ font-size: 1vw;
+ font-weight: 400;
+ position: relative;
+ bottom: 2vw;
+ left: 50vw;
+}
+.skills{
+  display: flex;
+  gap: 1vw;
+  margin-top: 2vh;
+}
+.skills button{
+  background-color: #FFEEEE;
+  font-size: 1vw;
+  padding-left: .3vw;
+  margin-left: 1vw;
+  border-radius: 1rem;
+  border: none;
+  min-width: 5vw;
+  height: 4vh;
+  cursor:text;
+}
