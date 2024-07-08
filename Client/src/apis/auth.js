@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const registrationForm = async({name, email, mobile, password}) => {
 try {
-  const url = 'http://localhost:4000/api/v2/auth/register'
+  const url = `${import.meta.env.VITE_BACKEND_URL}/api/v2/auth/register`
   const reqPayload = {name, email, mobile, password}
   const response = axios.post(url, reqPayload)
   console.log(reqPayload)
@@ -15,7 +15,7 @@ try {
 
 export const loginForm =  async (email, password) => {
   try {
-      const url = 'http://localhost:4000/api/v2/auth/login'
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/v2/auth/login`
       const response = await axios.post(url, { email, password });
       return response.data;
   } catch (error) {

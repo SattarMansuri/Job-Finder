@@ -7,7 +7,6 @@ const cors = require('cors')
 app.use(express.json())
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
-
 app.use(cors())
 app.use('/api/v2/auth', auth)
 app.use('/api/v2/jobDetails', jobDetails)

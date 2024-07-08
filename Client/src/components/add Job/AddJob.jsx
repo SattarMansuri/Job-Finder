@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './AddJob.module.css'
 import JobImg from '../../assets/job.png'
 import { DEFAULT_SKILLS } from '../../utils/constant'
@@ -64,7 +64,7 @@ const removeSkill = (skill) => {
   );
   setFormData({ ...formData, skills: filteredSkills });
 };
-  
+
   return (
     <div className={styles.addJob}>
     <div className={styles.leftSection}>

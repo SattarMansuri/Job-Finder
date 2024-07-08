@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const getJobDetailsById =  async (jobId) => {
   try {
-      const url = `http://localhost:4000/api/v2/jobDetails/details/${jobId}`
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/v2/jobDetails/details/${jobId}`
       const response = await axios.get(url);
       return response.data;
   } catch (error) {
@@ -11,7 +11,7 @@ export const getJobDetailsById =  async (jobId) => {
 
 export const createJobPost =  async (jobPostPayload) => {
   try {
-      const url = `http://localhost:4000/api/v2/jobDetails/create`
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/v2/jobDetails/create`
       const token = localStorage.getItem('token')
       axios.defaults.headers.common["Authorization"] = token
       const response = await axios.post(url, jobPostPayload);
@@ -23,7 +23,7 @@ export const createJobPost =  async (jobPostPayload) => {
 
 export const updateJobPostById =  async (jobId,  updateJobPost) => {
   try {
-      const url = `http://localhost:4000/api/v2/jobDetails/edit/${jobId}`
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/v2/jobDetails/edit/${jobId}`
       const token = localStorage.getItem('token')
       axios.defaults.headers.common["Authorization"] = token
       const response = await axios.put(url, updateJobPost);
@@ -36,7 +36,7 @@ export const updateJobPostById =  async (jobId,  updateJobPost) => {
 
 export const getAllJobPost =  async (filter) => {
   try {
-      const url = `http://localhost:4000/api/v2/jobDetails/all-jobs?title=${filter.title || ''}&skills=${filter.skills || ''}`
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/v2/jobDetails/all-jobs?title=${filter.title || ''}&skills=${filter.skills || ''}`
       const response = await axios.get(url);
       return response?.data
   } catch (error) {
