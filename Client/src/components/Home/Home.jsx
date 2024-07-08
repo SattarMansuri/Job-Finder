@@ -47,7 +47,7 @@ const removeSkill = (selectedSkill) => {
         ))}
       </select>
       <div className={styles.skillsArr}>
-      {skills.map((skill)=>(
+      {skills?.map((skill)=>(
         <span className={styles.skill}>{skill}&nbsp;<button onClick={() =>removeSkill(skill)}>X</button></span>
         
       ))}
@@ -58,7 +58,7 @@ const removeSkill = (selectedSkill) => {
       
     </div>
     {jobs?.length ? <div className={styles.result}>
-        {jobs.map((data)=>{
+        {jobs?.map((data)=>{
           return(
           <div key={data?._id} className={styles.job}>
         <img className={styles.company} src={data?.logoUrl} alt="Logo" />
@@ -67,7 +67,7 @@ const removeSkill = (selectedSkill) => {
       <sub><MdPeopleAlt size={17} color='#919191'/></sub> <span style={{fontSize: ".8vw", color: "#919191", fontWeight: "500"}}>11-50</span>&nbsp; &nbsp;&nbsp; &nbsp;<span style={{fontSize: ".9vw", color: "#919191", fontWeight: "500"}}>₹ {data?.salary}</span><br />
        <span style={{fontSize: ".7vw", color: "red", fontWeight: "500"}}>{data?.location} &nbsp;&nbsp;&nbsp;&nbsp; {data?.jobType}</span>
         </p>
-        <p className={styles.displaySkills}>{data?.skills.map((skill)=>(
+        <p className={styles.displaySkills}>{data?.skills?.map((skill)=>(
           <span>{skill}&nbsp;</span>
         ))}</p>
         <div className={styles.flag}>
