@@ -23,6 +23,7 @@ const AddJob = () => {
       jobType: "" || stateData?.jobType,
       aboutCompany: "" || stateData?.aboutCompany,
   });
+  console.log(stateData)
 
   const handleChange = (event) => {
       setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -70,18 +71,19 @@ const removeSkill = (skill) => {
     <div className={styles.leftSection}>
       <div className={styles.title}>Add Job Description</div>
       <form className={styles.jobform} method="post">
-        <span>Company Name</span><input type="text" required name="companyName" placeholder='Enter your company name' onChange={handleChange}  className={styles.first}/><br />
+        <span>Company Name</span><input type="text" required value={stateData.companyName || ''} name="companyName" placeholder='Enter your company name' onChange={handleChange}  className={styles.first}/><br />
         
-        <span>Add Logo  Url</span><input type="text" name="logoUrl" placeholder='Enter the link' onChange={handleChange} className={styles.second}/><br />
+        <span>Add Logo  Url</span><input type="text" value={stateData.logoUrl || ''} name="logoUrl" placeholder='Enter the link' onChange={handleChange} className={styles.second}/><br />
        
-        <span>Job Position</span><input type="text" name="title" placeholder='Enter job position' onChange={handleChange} className={styles.third}/><br />
+        <span>Job Position</span><input type="text" value={stateData.title || ''} name="title" placeholder='Enter job position' onChange={handleChange} className={styles.third}/><br />
         
-        <span>Monthly Salary</span><input type="text" name="salary" placeholder='Enter Amount in rupees' onChange={handleChange} className={styles.fourth}/><br />
+        <span>Monthly Salary</span><input type="text" name="salary" value={stateData.salary || ''} placeholder='Enter Amount in rupees' onChange={handleChange} className={styles.fourth}/><br />
         
         <span>Job Type</span><select
                         className={styles.fifth}
                         name="duration"
                         onChange={handleChange}
+                        value={stateData.jobType || ''}
                     >
                          <option disabled selected value="Select job type">Select job type</option>
                         <option value="Full-time">Full-time</option>
@@ -92,6 +94,7 @@ const removeSkill = (skill) => {
                         className={styles.sixth}
                         name="locationType"
                         onChange={handleChange}
+                        value={stateData.locationType || ''}
                     >
                         <option disabled selected value="">Select location type</option>
                         <option value="Remote">Remote</option>
@@ -99,11 +102,11 @@ const removeSkill = (skill) => {
                     </select>
           <br />
         
-        <span>Location</span><input type="text" name="location" placeholder='Enter Location' onChange={handleChange} className={styles.seventh}/><br />
+        <span>Location</span><input type="text" value={stateData?.location || ''} name="location" placeholder='Enter Location' onChange={handleChange} className={styles.seventh}/><br />
         
-        <span style={{position: "relative", top: "-8vh"}}>Job Description</span><textarea type="text" name="description" placeholder='Type the job description' onChange={handleChange} className={styles.eighth} /><br />
+        <span style={{position: "relative", top: "-8vh"}}>Job Description</span><textarea type="text" value={stateData?.description || ''} name="description" placeholder='Type the job description' onChange={handleChange} className={styles.eighth} /><br />
         
-        <span style={{position: "relative", top: "-8vh"}}>About Company</span><textarea type="text" name="aboutCompany" placeholder='Type about your company' onChange={handleChange} className={styles.ninth}/><br />
+        <span style={{position: "relative", top: "-8vh"}}>About Company</span><textarea type="text" value={stateData.aboutCompany || ''} name="aboutCompany" placeholder='Type about your company' onChange={handleChange} className={styles.ninth}/><br />
         
         <span>Skills Required</span><select name="skills" onChange={addSkills} className={styles.tenth}>
           <option selected disabled >Please select the skills</option>
@@ -119,7 +122,7 @@ const removeSkill = (skill) => {
                     ))}
                 </div> <br />
         
-        <span>Information</span><input type="text" name="information" placeholder='Enter the additional information' onChange={handleChange} className={styles.eleventh}/><br />
+        <span>Information</span><input type="text" value={stateData.information || ''} name="information" placeholder='Enter the additional information' onChange={handleChange} className={styles.eleventh}/><br />
         
         <button className={styles.add} onClick={handleSubmit}>{state?.edit ? "Edit Job" : "+ Add Job "}</button>
       </form>
